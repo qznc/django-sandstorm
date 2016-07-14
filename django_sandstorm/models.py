@@ -22,9 +22,9 @@ class MyUserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-    sandstorm_id = models.CharField(max_length=32, unique=True)
+    sandstorm_id = models.CharField(max_length=32, primary_key=True)
     name = models.CharField(max_length=256)
-    handle = models.CharField(max_length=128)
+    handle = models.CharField(max_length=128, null=True, blank=True)
     is_admin = models.BooleanField(default=False)
 
     objects = MyUserManager()
