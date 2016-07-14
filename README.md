@@ -15,11 +15,9 @@ INSTALLED_APPS += (
     'django_sandstorm',
 )
 
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.RemoteUserBackend',
-)
-
 MIDDLEWARE_CLASSES += (
     'django_sandstorm.middleware.SandstormMiddleware',
 )
+
+AUTH_USER_MODEL = "django_sandstorm.User"
 ```
